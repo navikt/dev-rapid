@@ -10,7 +10,7 @@ Dev-rapid is a Kafka topic that contains events from systems that NAV developers
 
 | Description | Produced by | Protobuf format |
 |-------------|-------------|-----------------|
-| Application deployment events | [Naiserator](https://github.com/nais/naiserator) and [Fasit](https://github.com/nais/fasit) | [deployment.Event](https://github.com/navikt/protos/blob/master/deployment/event.proto) |
+| Application deployment events | [Naiserator](https://github.com/nais/naiserator) and [Fasit](https://github.com/navikt/fasit) | [deployment.Event](https://github.com/navikt/protos/blob/master/deployment/event.proto) |
 
 ## Message format
 
