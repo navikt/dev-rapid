@@ -70,9 +70,8 @@ Serialize your data in the Protobuf binary format, and produce it on the Kafka t
 Protobuf messages are forwards and backwards compatible, and will continue to
 work with older and newer clients provided that you follow these golden rules:
 
-1) Field names MUST NOT change.
-2) Field enumerations MUST NOT change.
-3) Fields MUST NOT be removed.
+1) Field types, names, or enumerations MUST NOT change.
+2) Fields MUST NOT be removed.
 
 Breaking these rules will break all consumers of your message. Don't do it.
 
