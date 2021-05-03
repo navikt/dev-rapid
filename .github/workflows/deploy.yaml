@@ -3,7 +3,7 @@ name: Deploy dev-rapid topic to prod-gcp
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
