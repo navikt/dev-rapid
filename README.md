@@ -34,10 +34,11 @@ wget https://path/to/protobuf/file.proto
 protoc --proto_path=. --java_out=src file.proto
 ```
 
-## Configuring access
+## Get access
 
 1) By pull request, add your application to the [topic spec](topic.yaml) with the correct permissions (`read`, `write`, or `readwrite`).
 2) [Configure your application](https://doc.nais.io/addons/kafka/#accessing-topics-from-an-application) according to the NAIS documentation.
+3) Consume or produce using the topic `aura.dev-rapid`. For development purposes, use the pool `nav-dev`. This pool is only available in development clusters. For production use, use the pool `nav-infrastructure`. This pool is available from both development and production clusters.
 
 ## Consuming data
 
@@ -70,8 +71,8 @@ Serialize your data in the Protobuf binary format, and produce it on the Kafka t
 Protobuf messages are forwards and backwards compatible, and will continue to
 work with older and newer clients provided that you follow these golden rules:
 
-1) Field types, names, or enumerations MUST NOT change.
-2) Fields MUST NOT be removed.
+1) Message name, field types, field names, or enumerations MUST NOT change.
+2) Messages or fields MUST NOT be removed.
 
 Breaking these rules will break all consumers of your message. Don't do it.
 
