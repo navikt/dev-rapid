@@ -17,11 +17,11 @@ jobs:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: dev-gcp
           RESOURCE: topic.yaml
-          VAR: pool=nav-dev
+          VAR: pool=nav-dev,retention_hours=24
       - name: deploy to prod-gcp on nav-infrastructure
         uses: nais/deploy/actions/deploy@v1
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: prod-gcp
           RESOURCE: topic.yaml
-          VAR: pool=nav-infrastructure
+          VAR: pool=nav-infrastructure,retention_hours=-1

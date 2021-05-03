@@ -19,7 +19,7 @@ spec:
     partitions: 1
     replication: 3
     retentionBytes: -1
-    retentionHours: -1
+    retentionHours: {{ retention_hours }}
   acl:
     - team: nais
       application: naiserator
