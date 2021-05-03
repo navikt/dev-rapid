@@ -21,3 +21,6 @@ spec:
     - team: nais
       application: naiserator
       access: write
+    - team: nais-analyse
+      application: devrapid-git-push
+      access: write
