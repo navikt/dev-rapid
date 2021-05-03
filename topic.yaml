@@ -1,0 +1,23 @@
+# This Topic must be deployed to prod-gcp _only_.
+
+---
+apiVersion: kafka.nais.io/v1
+kind: Topic
+metadata:
+  name: dev-rapid-test
+  namespace: aura
+  labels:
+    team: aura
+spec:
+  pool: nav-infrastructure
+  config:
+    cleanupPolicy: compact
+    minimumInSyncReplicas: 2
+    partitions: 1
+    replication: 3
+    retentionBytes: -1
+    retentionHours: -1
+  acl:
+    - team: nais
+      application: naiserator
+      access: write
