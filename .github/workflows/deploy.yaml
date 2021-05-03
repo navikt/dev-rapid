@@ -1,4 +1,4 @@
-name: Deploy dev-rapid topic to prod-gcp
+name: Deploy dev-rapid topic
 
 on:
   push:
@@ -7,12 +7,21 @@ on:
 
 jobs:
   deploy:
-    name: Deploy topic to prod-gcp
+    name: Deploy topic
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: nais/deploy/actions/deploy@v1
+      - name: deploy to dev-gcp on nav-dev
+        uses: nais/deploy/actions/deploy@v1
+        env:
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          CLUSTER: dev-gcp
+          RESOURCE: topic.yaml
+          VAR: pool=nav-dev
+      - name: deploy to prod-gcp on nav-infrastructure
+        uses: nais/deploy/actions/deploy@v1
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: prod-gcp
           RESOURCE: topic.yaml
+          VAR: pool=nav-infrastructure

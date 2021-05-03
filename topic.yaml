@@ -1,15 +1,18 @@
-# This Topic must be deployed to prod-gcp _only_.
+# This is the dev-rapid topic.
+# Add your application to the ACL structure to gain read or write access based on your needs.
+#
+# Two topics will be created, one for development and one for production.
 
 ---
 apiVersion: kafka.nais.io/v1
 kind: Topic
 metadata:
-  name: dev-rapid-test
+  name: dev-rapid
   namespace: aura
   labels:
     team: aura
 spec:
-  pool: nav-infrastructure
+  pool: {{ pool }}
   config:
     cleanupPolicy: compact
     minimumInSyncReplicas: 2
