@@ -1,0 +1,19 @@
+name: Deploy dev-rapid topic to prod-gcp
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    name: Deploy topic to prod-gcp
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: nais/deploy/actions/deploy@v1
+        env:
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          CLUSTER: prod-gcp
+          RESOURCE: topic.yaml
