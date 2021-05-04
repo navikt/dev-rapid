@@ -24,6 +24,12 @@ spec:
     - team: nais
       application: naiserator
       access: write
+    - team: aura
+      application: fasit
+      access: write
     - team: nais-analyse
       application: devrapid-git-push
       access: write
+    - team: aura
+      application: deployment-event-relays
+      access: read
