@@ -33,3 +33,6 @@ spec:
     - team: aura
       application: deployment-event-relays
       access: read
+    - team: nais-analyse
+      application: devrapid-leadtime
+      access: read
