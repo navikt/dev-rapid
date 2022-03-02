@@ -36,3 +36,6 @@ spec:
     - team: nais-analyse
       application: devrapid-leadtime
       access: read
+    - access: read
+      team: nais-analyse
+      application: audunstrand
