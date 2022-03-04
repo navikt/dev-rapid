@@ -38,4 +38,4 @@ spec:
       access: read
     - access: read
       team: nais-analyse
-      application: audunstrand
+      application: deploy-dataproduct
