@@ -21,6 +21,9 @@ spec:
     retentionBytes: -1
     retentionHours: {{ retention_hours }}
   acl:
+    - team: nais-system
+      application: naiserator
+      access: write
     - team: nais
       application: naiserator
       access: write
