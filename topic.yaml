@@ -33,7 +33,7 @@ spec:
     - team: nais-analyse
       application: devrapid-git-push
       access: write
-    - team: aura
+    - team: nais-system
       application: deployment-event-relays
       access: read
     - team: nais-analyse
